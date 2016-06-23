@@ -49,13 +49,12 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnConvert = new System.Windows.Forms.Button();
             this.btnCreatePDF = new System.Windows.Forms.Button();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
-            this.label9 = new System.Windows.Forms.Label();
-            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox8 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnAddChange = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.pos = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -142,11 +141,14 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pictureBox1.Location = new System.Drawing.Point(239, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(350, 350);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // groupBox2
             // 
@@ -267,50 +269,6 @@
             this.btnCreatePDF.UseVisualStyleBackColor = true;
             this.btnCreatePDF.Click += new System.EventHandler(this.btnCreatePDF_Click);
             // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(239, 368);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(350, 23);
-            this.hScrollBar1.TabIndex = 15;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(295, 391);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 17);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "RGB Values";
-            // 
-            // richTextBox7
-            // 
-            this.richTextBox7.Location = new System.Drawing.Point(386, 391);
-            this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.ReadOnly = true;
-            this.richTextBox7.Size = new System.Drawing.Size(52, 20);
-            this.richTextBox7.TabIndex = 9;
-            this.richTextBox7.Text = "";
-            // 
-            // richTextBox8
-            // 
-            this.richTextBox8.Location = new System.Drawing.Point(444, 391);
-            this.richTextBox8.Name = "richTextBox8";
-            this.richTextBox8.ReadOnly = true;
-            this.richTextBox8.Size = new System.Drawing.Size(52, 20);
-            this.richTextBox8.TabIndex = 16;
-            this.richTextBox8.Text = "";
-            // 
-            // richTextBox9
-            // 
-            this.richTextBox9.Location = new System.Drawing.Point(502, 391);
-            this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.ReadOnly = true;
-            this.richTextBox9.Size = new System.Drawing.Size(52, 20);
-            this.richTextBox9.TabIndex = 17;
-            this.richTextBox9.Text = "";
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -332,18 +290,45 @@
             this.btnAddChange.UseVisualStyleBackColor = true;
             this.btnAddChange.Click += new System.EventHandler(this.btnAddChange_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(338, 368);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 20;
+            this.btnBack.Text = "<";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(420, 368);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 21;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // pos
+            // 
+            this.pos.AutoSize = true;
+            this.pos.Location = new System.Drawing.Point(236, 368);
+            this.pos.Name = "pos";
+            this.pos.Size = new System.Drawing.Size(41, 13);
+            this.pos.TabIndex = 22;
+            this.pos.Text = "label10";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.pos);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAddChange);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.richTextBox9);
-            this.Controls.Add(this.richTextBox8);
-            this.Controls.Add(this.richTextBox7);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.btnCreatePDF);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.btnSave);
@@ -386,13 +371,12 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Button btnCreatePDF;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RichTextBox richTextBox7;
-        private System.Windows.Forms.RichTextBox richTextBox8;
-        private System.Windows.Forms.RichTextBox richTextBox9;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnAddChange;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label pos;
     }
 }
 

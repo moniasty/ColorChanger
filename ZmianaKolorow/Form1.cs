@@ -17,6 +17,8 @@ namespace ZmianaKolorow
     public partial class Form1 : Form
     {
         // 
+        Color pixelColor;
+        private int imageNR=0;
         private string [] sourcePath;
         private string destinationPath;
         private List<Color> oldColor=new List<Color>();
@@ -35,7 +37,7 @@ namespace ZmianaKolorow
             {
                 sourcePath = Directory.GetFiles(fbd.SelectedPath);
                 MessageBox.Show("File found "+ sourcePath.Length.ToString(), "Message");
-
+                pictureBox1.Image = System.Drawing.Image.FromFile(sourcePath[imageNR]);
             }
         }
 
@@ -172,5 +174,49 @@ namespace ZmianaKolorow
 
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if(imageNR>0)
+            {
+                imageNR--;
+                pictureBox1.Image = System.Drawing.Image.FromFile(sourcePath[imageNR]);
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if(imageNR<sourcePath.Count()-1)
+            {
+                imageNR++;
+                pictureBox1.Image = System.Drawing.Image.FromFile(sourcePath[imageNR]);
+            }
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            Bitmap img = (Bitmap)pictureBox1.Image;
+            float stretch_x = img.Width / (float)pictureBox1.Width;
+            float stretch_y = img.Height / (float)pictureBox1.Height;
+            pixelColor = img.GetPixel((int)(e.X * stretch_x), (int)(e.Y * stretch_y));
+
+            OldColorR.Text = pixelColor.R.ToString();
+            OldColorG.Text = pixelColor.G.ToString();
+            OldColorB.Text = pixelColor.B.ToString();
+            //MessageBox.Show(pixelColor.R.ToString()+" "+ pixelColor.G.ToString()+" " +pixelColor.B.ToString());
+        }
+
+
+
+
+
+
+        /* private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+         {
+            int x= MousePosition.X;
+            int y = MousePosition.Y;
+             pos.Text = x.ToString() + " " + y.ToString();
+
+         }*/
     }
 }
