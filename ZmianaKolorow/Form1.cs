@@ -16,6 +16,8 @@ namespace ZmianaKolorow
         // 
         private string [] sourcePath;
         private string destinationPath;
+        private List<Color> oldColor;
+        private List<Color> newColor;
 
         public Form1()
         {
@@ -46,5 +48,75 @@ namespace ZmianaKolorow
             }
 
         }
+
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Bitmap bitmap = null;
+                foreach (string s in sourcePath)
+                {
+                    bitmap = (Bitmap)Image.FromFile(s);
+                    bitmap = change(bitmap);
+                    string[] spliter = s.Split('\\');
+                    bitmap.Save(destinationPath + spliter[1]);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void btnAddChange_Click(object sender, EventArgs e)
+        {
+            oldColor.Add(Color.FromArgb(
+                Convert.ToInt32(OldColorR),
+                Convert.ToInt32(OldColorG),
+                Convert.ToInt32(OldColorB)));
+
+            newColor.Add(Color.FromArgb(
+                Convert.ToInt32(NewColorR),
+                Convert.ToInt32(NewColorG),
+                Convert.ToInt32(NewColorB)));
+        }
+
+
+
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private Bitmap change(Bitmap picture)
+        {
+            Color actualColor;
+
+            Bitmap newPicture = new Bitmap(picture);
+            for(int x=0; x<picture.Width;x++)
+            {
+                for(int y=0; y<picture.Height; y++)
+                {
+                    actualColor = picture.GetPixel(x, y);
+                    for(int i=0; i< oldColor.Count;i++)
+                    {
+                        if(actualColor == oldColor[i])
+                        {
+                            picture.SetPixel(i, j, newColor[i]);
+                        }
+                        else
+                        {
+                            picture.SetPixel(i, j, actualColor);
+                        }
+                    }
+                }
+            }
+            return picture;
+
+        }
+
+
     }
 }
