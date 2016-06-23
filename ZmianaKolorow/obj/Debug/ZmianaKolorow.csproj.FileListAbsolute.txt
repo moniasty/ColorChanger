@@ -1,0 +1,12 @@
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\bin\Debug\ZmianaKolorow.exe.config
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\bin\Debug\ZmianaKolorow.exe
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\bin\Debug\ZmianaKolorow.pdb
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\obj\Debug\ZmianaKolorow.csprojResolveAssemblyReference.cache
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\obj\Debug\ZmianaKolorow.Form1.resources
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\obj\Debug\ZmianaKolorow.Properties.Resources.resources
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\obj\Debug\ZmianaKolorow.csproj.GenerateResource.Cache
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\obj\Debug\ZmianaKolorow.exe
+C:\Users\kamil\Desktop\kolor\ver2\ZmianaKolorow\ZmianaKolorow\obj\Debug\ZmianaKolorow.pdb
+C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\bin\Debug\ZmianaKolorow.exe.config
+C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\obj\Debug\ZmianaKolorow.exe
+C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\obj\Debug\ZmianaKolorow.pdb
