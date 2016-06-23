@@ -16,8 +16,8 @@ namespace ZmianaKolorow
         // 
         private string [] sourcePath;
         private string destinationPath;
-        private List<Color> oldColor;
-        private List<Color> newColor;
+        private List<Color> oldColor=new List<Color>();
+        private List<Color> newColor = new List<Color>();
 
         public Form1()
         {
@@ -59,7 +59,8 @@ namespace ZmianaKolorow
                     bitmap = (Bitmap)Image.FromFile(s);
                     bitmap = change(bitmap);
                     string[] spliter = s.Split('\\');
-                    bitmap.Save(destinationPath + spliter[1]);
+                    
+                    bitmap.Save(destinationPath+ '\\' + spliter[spliter.Count()-1]);
                 }
             }
             catch(Exception ex)
@@ -71,15 +72,36 @@ namespace ZmianaKolorow
 
         private void btnAddChange_Click(object sender, EventArgs e)
         {
-            oldColor.Add(Color.FromArgb(
-                Convert.ToInt32(OldColorR),
-                Convert.ToInt32(OldColorG),
-                Convert.ToInt32(OldColorB)));
+            /*
+          Color  oc = Color.FromArgb(
+                Convert.ToInt32(OldColorR.Text),
+                Convert.ToInt32(OldColorG.Text),
+                Convert.ToInt32(OldColorB.Text));
 
+           Color nc = Color.FromArgb(
+                Convert.ToInt32(NewColorR.Text),
+                Convert.ToInt32(NewColorG.Text),
+                Convert.ToInt32(NewColorB.Text));
+            */
+
+            oldColor.Add(Color.FromArgb(
+                Convert.ToInt32(OldColorR.Text),
+                Convert.ToInt32(OldColorG.Text),
+                Convert.ToInt32(OldColorB.Text)));
             newColor.Add(Color.FromArgb(
-                Convert.ToInt32(NewColorR),
-                Convert.ToInt32(NewColorG),
-                Convert.ToInt32(NewColorB)));
+                Convert.ToInt32(NewColorR.Text),
+                Convert.ToInt32(NewColorG.Text),
+                Convert.ToInt32(NewColorB.Text)));
+
+            OldColorR.Clear();
+            OldColorG.Clear();
+            OldColorB.Clear();
+
+            NewColorR.Clear();
+            NewColorG.Clear();
+            NewColorB.Clear();
+
+
         }
 
 
@@ -104,12 +126,14 @@ namespace ZmianaKolorow
                     {
                         if(actualColor == oldColor[i])
                         {
-                            picture.SetPixel(i, j, newColor[i]);
+                            picture.SetPixel(x, y, newColor[i]);
+                            break;
                         }
-                        else
-                        {
-                            picture.SetPixel(i, j, actualColor);
-                        }
+                        //else
+                        //{
+                        //    picture.SetPixel(x, y, actualColor);
+                        //}
+                        
                     }
                 }
             }
