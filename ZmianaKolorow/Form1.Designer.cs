@@ -54,7 +54,7 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.pos = new System.Windows.Forms.Label();
+            this.btnSelectColor = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -141,17 +141,19 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox1.Location = new System.Drawing.Point(239, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(350, 350);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnSelectColor);
             this.groupBox2.Controls.Add(this.NewColorB);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.NewColorG);
@@ -161,7 +163,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(12, 146);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(177, 128);
+            this.groupBox2.Size = new System.Drawing.Size(177, 152);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "New Colors";
@@ -231,9 +233,9 @@
             // 
             // btnChooseFolder
             // 
-            this.btnChooseFolder.Location = new System.Drawing.Point(12, 322);
+            this.btnChooseFolder.Location = new System.Drawing.Point(11, 367);
             this.btnChooseFolder.Name = "btnChooseFolder";
-            this.btnChooseFolder.Size = new System.Drawing.Size(177, 23);
+            this.btnChooseFolder.Size = new System.Drawing.Size(178, 23);
             this.btnChooseFolder.TabIndex = 11;
             this.btnChooseFolder.Text = "Choose folder with .bmp files";
             this.btnChooseFolder.UseVisualStyleBackColor = true;
@@ -241,9 +243,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 351);
+            this.btnSave.Location = new System.Drawing.Point(11, 396);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(177, 23);
+            this.btnSave.Size = new System.Drawing.Size(178, 23);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Choose destination folder";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -251,9 +253,9 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.Location = new System.Drawing.Point(12, 380);
+            this.btnConvert.Location = new System.Drawing.Point(11, 425);
             this.btnConvert.Name = "btnConvert";
-            this.btnConvert.Size = new System.Drawing.Size(177, 23);
+            this.btnConvert.Size = new System.Drawing.Size(178, 23);
             this.btnConvert.TabIndex = 13;
             this.btnConvert.Text = "Convert";
             this.btnConvert.UseVisualStyleBackColor = true;
@@ -261,9 +263,9 @@
             // 
             // btnCreatePDF
             // 
-            this.btnCreatePDF.Location = new System.Drawing.Point(12, 409);
+            this.btnCreatePDF.Location = new System.Drawing.Point(11, 454);
             this.btnCreatePDF.Name = "btnCreatePDF";
-            this.btnCreatePDF.Size = new System.Drawing.Size(177, 23);
+            this.btnCreatePDF.Size = new System.Drawing.Size(178, 23);
             this.btnCreatePDF.TabIndex = 14;
             this.btnCreatePDF.Text = "Create PDF Files";
             this.btnCreatePDF.UseVisualStyleBackColor = true;
@@ -272,7 +274,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(490, 419);
+            this.linkLabel1.Location = new System.Drawing.Point(650, 539);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(122, 13);
             this.linkLabel1.TabIndex = 18;
@@ -282,9 +284,9 @@
             // 
             // btnAddChange
             // 
-            this.btnAddChange.Location = new System.Drawing.Point(12, 280);
+            this.btnAddChange.Location = new System.Drawing.Point(11, 325);
             this.btnAddChange.Name = "btnAddChange";
-            this.btnAddChange.Size = new System.Drawing.Size(177, 23);
+            this.btnAddChange.Size = new System.Drawing.Size(178, 23);
             this.btnAddChange.TabIndex = 19;
             this.btnAddChange.Text = "Replace Color";
             this.btnAddChange.UseVisualStyleBackColor = true;
@@ -292,9 +294,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(338, 368);
+            this.btnBack.Location = new System.Drawing.Point(14, 483);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(89, 23);
             this.btnBack.TabIndex = 20;
             this.btnBack.Text = "<";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -302,29 +304,29 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(420, 368);
+            this.btnNext.Location = new System.Drawing.Point(99, 483);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.Size = new System.Drawing.Size(89, 23);
             this.btnNext.TabIndex = 21;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // pos
+            // btnSelectColor
             // 
-            this.pos.AutoSize = true;
-            this.pos.Location = new System.Drawing.Point(236, 368);
-            this.pos.Name = "pos";
-            this.pos.Size = new System.Drawing.Size(41, 13);
-            this.pos.TabIndex = 22;
-            this.pos.Text = "label10";
+            this.btnSelectColor.Location = new System.Drawing.Point(7, 123);
+            this.btnSelectColor.Name = "btnSelectColor";
+            this.btnSelectColor.Size = new System.Drawing.Size(153, 23);
+            this.btnSelectColor.TabIndex = 9;
+            this.btnSelectColor.Text = "Select Color";
+            this.btnSelectColor.UseVisualStyleBackColor = true;
+            this.btnSelectColor.Click += new System.EventHandler(this.btnSelectColor_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 441);
-            this.Controls.Add(this.pos);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAddChange);
@@ -376,7 +378,7 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Label pos;
+        private System.Windows.Forms.Button btnSelectColor;
     }
 }
 

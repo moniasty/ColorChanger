@@ -18,6 +18,7 @@ namespace ZmianaKolorow
     {
         // 
         Color pixelColor;
+        Color newPixelColor;
         private int imageNR=0;
         private string [] sourcePath;
         private string destinationPath;
@@ -204,6 +205,18 @@ namespace ZmianaKolorow
             OldColorG.Text = pixelColor.G.ToString();
             OldColorB.Text = pixelColor.B.ToString();
             //MessageBox.Show(pixelColor.R.ToString()+" "+ pixelColor.G.ToString()+" " +pixelColor.B.ToString());
+        }
+
+        private void btnSelectColor_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                newPixelColor = colorDialog1.Color;
+
+            }
+            NewColorR.Text = newPixelColor.R.ToString();
+            NewColorG.Text = newPixelColor.G.ToString();
+            NewColorB.Text = newPixelColor.B.ToString();
         }
 
 
