@@ -234,6 +234,7 @@
             this.btnChooseFolder.TabIndex = 11;
             this.btnChooseFolder.Text = "Choose folder with .bmp files";
             this.btnChooseFolder.UseVisualStyleBackColor = true;
+            this.btnChooseFolder.Click += new System.EventHandler(this.btnChooseFolder_Click);
             // 
             // btnSave
             // 
@@ -243,6 +244,7 @@
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Choose destination folder";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnConvert
             // 
