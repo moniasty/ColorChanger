@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 
 namespace ZmianaKolorow
 {
@@ -56,7 +59,7 @@ namespace ZmianaKolorow
                 Bitmap bitmap = null;
                 foreach (string s in sourcePath)
                 {
-                    bitmap = (Bitmap)Image.FromFile(s);
+                    bitmap = (Bitmap)System.Drawing.Image.FromFile(s);
                     bitmap = change(bitmap);
                     string[] spliter = s.Split('\\');
                     
@@ -141,6 +144,33 @@ namespace ZmianaKolorow
 
         }
 
+        private void btnCreatePDF_Click(object sender, EventArgs e)
+        {
+            string[] bmpFiles;
+            if (!string.IsNullOrWhiteSpace(destinationPath))
+            {
+                bmpFiles = Directory.GetFiles(destinationPath);
+                
+                System.Drawing.Image first = System.Drawing.Image.FromFile(bmpFiles[0]);
+                Document doc = new Document(new iTextSharp.text.Rectangle(first.Width, first.Height));
+                PdfWriter.GetInstance(doc, new FileStream("image.pdf", FileMode.Create) );
+                doc.Open();
+                iTextSharp.text.Image pdfImage = iTextSharp.text.Image.GetInstance(first, System.Drawing.Imaging.ImageFormat.Bmp);
+                doc.Add(pdfImage);
 
+                for (int i=1;i<bmpFiles.Count();i++)
+                {
+                    //System.Drawing.Image image = System.Drawing.Image.FromFile(bmpFiles[i]);
+                    iTextSharp.text.Image pdfImage2 = iTextSharp.text.Image.GetInstance(System.Drawing.Image.FromFile(bmpFiles[i]), System.Drawing.Imaging.ImageFormat.Bmp);
+                    doc.Add(pdfImage2);
+                }
+
+
+                doc.Close();
+
+            }
+
+
+        }
     }
 }

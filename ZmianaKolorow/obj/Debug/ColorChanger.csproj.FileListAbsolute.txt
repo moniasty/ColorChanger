@@ -7,3 +7,7 @@ C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\obj\Debug\ColorChanger.cs
 C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\obj\Debug\ZmianaKolorow.Form1.resources
 C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\obj\Debug\ZmianaKolorow.Properties.Resources.resources
 C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\obj\Debug\ColorChanger.csproj.GenerateResource.Cache
+C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\bin\Debug\itextsharp.dll
+C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\bin\Debug\itextsharp.pdfa.dll
+C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\bin\Debug\itextsharp.xtra.dll
+C:\Users\kamil\Source\Repos\ColorChanger\ZmianaKolorow\bin\Debug\itextsharp.xml

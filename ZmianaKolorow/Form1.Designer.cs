@@ -265,6 +265,7 @@
             this.btnCreatePDF.TabIndex = 14;
             this.btnCreatePDF.Text = "Create PDF Files";
             this.btnCreatePDF.UseVisualStyleBackColor = true;
+            this.btnCreatePDF.Click += new System.EventHandler(this.btnCreatePDF_Click);
             // 
             // hScrollBar1
             // 
